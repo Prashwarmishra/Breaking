@@ -17,26 +17,107 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <EditText
         android:id="@+id/search_box"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:hint="@string/search_box_hint"
+        android:importantForAutofill="no"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_box_label"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@id/search_box_label" />
 
     <TextView
+        android:id="@+id/categories_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
         android:layout_marginTop="15dp"
         android:text="@string/categories_title"
         android:textColor="@color/purple_700"
-        app:layout_constraintTop_toBottomOf="@id/search_box"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/search_box" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categories_title">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/breaking_news"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/breaking_news" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/world"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/world" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/nation"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nation" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/business"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/business" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/technology"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/technology" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/entertainment"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/entertainment" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/sports"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sports" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/science"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/science" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/health"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/health" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/latest_news_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/latest_news_button"
+        android:onClick="handleLatestNewsButtonClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,4 +3,14 @@
     <string name="custom_search_text">Custom search</string>
     <string name="search_box_hint">Live cricket score</string>
     <string name="categories_title">Filter by categories</string>
+    <string name="breaking_news">Breaking news</string>
+    <string name="world">World</string>
+    <string name="nation">Nation</string>
+    <string name="business">Business</string>
+    <string name="technology">Technology</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="sports">Sports</string>
+    <string name="science">Science</string>
+    <string name="health">Health</string>
+    <string name="latest_news_button">Get latest news</string>
 </resources>
