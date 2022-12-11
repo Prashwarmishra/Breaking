@@ -1,5 +1,6 @@
 package com.example.breaking
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,13 +31,17 @@ class NewsAdapter(private val listener: Listener) : RecyclerView.Adapter<NewsAda
         val currentItem = data[position]
         holder.newsTitle.text = currentItem.title
         holder.newsAuthor.text = currentItem.author
-        Glide
-            .with(holder.itemView.context)
-            .load(currentItem.imageUrl)
-            .into(holder.newsImage)
+        Log.d("image_url", currentItem.imageUrl)
+        Glide.with(holder.itemView.context).load(currentItem.imageUrl).into(holder.newsImage)
     }
 
     override fun getItemCount() = data.size
+
+    fun updateData(newData: MutableList<News>) {
+        data.clear()
+        data.addAll(newData)
+        notifyDataSetChanged()
+    }
 }
 
 interface Listener {
