@@ -31,7 +31,6 @@ class NewsAdapter(private val listener: Listener) : RecyclerView.Adapter<NewsAda
         val currentItem = data[position]
         holder.newsTitle.text = currentItem.title
         holder.newsAuthor.text = currentItem.author
-        Log.d("image_url", currentItem.imageUrl)
         Glide.with(holder.itemView.context).load(currentItem.imageUrl).into(holder.newsImage)
     }
 

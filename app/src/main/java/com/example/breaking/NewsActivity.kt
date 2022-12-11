@@ -4,6 +4,8 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.ProgressBar
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -46,6 +48,9 @@ class NewsActivity : AppCompatActivity(), Listener {
             url += "&q=${query}"
         }
 
+        val progressBar: ProgressBar = findViewById(R.id.progress_bar)
+        progressBar.visibility = View.VISIBLE
+
         // create a request, format and add to newsData
         val request = JsonObjectRequest(Request.Method.GET, url, null, { request ->
             val dataArray = request.getJSONArray("articles")
@@ -64,6 +69,8 @@ class NewsActivity : AppCompatActivity(), Listener {
             // once we have the data, update the adapter data
             mAdapter.updateData(newsData)
         }, { Log.d("failed too fetch news", it.localizedMessage) })
+
+        progressBar.visibility = View.GONE
 
         // add request to queue
         VolleyQueue(this).addToRequestQueue(request)
